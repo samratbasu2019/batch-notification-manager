@@ -60,9 +60,11 @@ public class BatchManagerController {
 		logger.info("Inside todo notification");
 		try {
 			if (type.equalsIgnoreCase("todo")) {
-				Runtime.getRuntime().exec("todo-notification.sh");
+				ProcessBuilder pb = new ProcessBuilder("./todo-notification.sh");
+				Process p;
+		        p = pb.start();
 			}
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
