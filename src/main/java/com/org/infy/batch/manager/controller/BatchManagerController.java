@@ -60,7 +60,7 @@ public class BatchManagerController {
 		logger.info("Inside todo notification");
 		try {
 			if (type.equalsIgnoreCase("todo")) {
-				ProcessBuilder pb = new ProcessBuilder("./todo-notification.sh");
+				ProcessBuilder pb = new ProcessBuilder("/home/ubuntu/hackathon/notification-service/todo-notification.sh");
 				Process p;
 		        p = pb.start();
 			}
