@@ -19,6 +19,7 @@ import com.org.infy.batch.manager.service.FileStorageService;
 import com.org.infy.batch.manager.util.Constants;
 import com.org.infy.batch.manager.util.ResponseHelper;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class BatchManagerController {
 	protected final Log logger = LogFactory.getLog(this.getClass());
