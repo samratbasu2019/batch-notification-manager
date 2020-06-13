@@ -29,7 +29,7 @@ public class BatchManagerController {
 
 	@PostMapping("/batch-manager/upload/todo-template")
 	public ResponseEntity<?> uploadAppreciation(
-			@RequestParam(value = "files", required = false) MultipartFile[] files) {
+			@RequestParam(value = "files", required = true) MultipartFile[] files) {
 		logger.info("inside todo-template...");
 		List<Path> listPath = Arrays.asList(files).stream()
 				.map(file -> fileStorageService.storeFile(file, Constants.TODO_UPLOAD_TYPE))
@@ -42,8 +42,7 @@ public class BatchManagerController {
 	}
 
 	@PostMapping("/batch-manager/upload/campaign-template")
-	public ResponseEntity<?> uploadCourse(@RequestParam(value = "files", required = false) MultipartFile[] files,
-			String icountStore) {
+	public ResponseEntity<?> uploadCourse(@RequestParam(value = "files", required = true) MultipartFile[] files) {
 
 		logger.info("inside campaign-template...");
 		List<Path> listPath = Arrays.asList(files).stream()
